@@ -33,15 +33,12 @@ if (!isViewportLessThan700px()) {
     window.onscroll = scrollFunction;
 }
 
-function isViewportLessThanOrEqualTo700px() {
-    return window.innerWidth <= 700;
-}
-
 document.addEventListener("DOMContentLoaded", function() {
     const showMoreButton = document.getElementById('showMoreButton');
     const hiddenImages = document.querySelectorAll('.gallery-content img:nth-child(n+4)');
     const serviceContent = document.getElementById('serviceContent');
     const jumpGallery = document.getElementById('jump-gallery');
+    const gallerySection = document.querySelector('.gallery-section');
     let isHidden = true;
 
     function toggleHiddenImages() {
@@ -51,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (isHidden) {
             if (isViewportLessThanOrEqualTo700px()) {
-                const gallerySection = document.querySelector('.gallery-section');
                 let galleryHeight = gallerySection.scrollHeight;
                 galleryHeight = galleryHeight > 600 ? 600 : galleryHeight;
                 serviceContent.style.marginTop = `${galleryHeight}px`;
@@ -81,7 +77,36 @@ document.addEventListener("DOMContentLoaded", function() {
             img.style.display = 'block';
         });
     }
+
+    // Function to check if viewport width is less than or equal to 700px
+    function isViewportLessThanOrEqualTo700px() {
+        return window.innerWidth <= 700;
+    }
+    
+    // Add event listener for hovering on .price-content .offers img
+    const priceContentOffersImgs = document.querySelectorAll('.price-content .offers img');
+
+priceContentOffersImgs.forEach(img => {
+    img.addEventListener('mouseenter', function() {
+        img.style.height = '400px';
+        gallerySection.style.marginTop = '300px';
+    });
+
+    img.addEventListener('mouseleave', function() {
+        img.style.height = ''; 
+        gallerySection.style.marginTop = '80px';
+        if (isHidden && isViewportLessThanOrEqualTo700px()) {
+            let galleryHeight = gallerySection.scrollHeight;
+            galleryHeight = galleryHeight > 600 ? 600 : galleryHeight;
+            serviceContent.style.marginTop = `${galleryHeight}px`;
+        } else {
+            gallerySection.style.marginTop = '0';
+        }
+    });
 });
+});
+
+
 
 
 

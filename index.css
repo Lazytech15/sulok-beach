@@ -348,9 +348,9 @@
 .service-content .service-box{
     border: 1px solid black;
     width: 300px;
-    height: 200px;
+    height: auto;
     border-radius: 10px;
-    padding: 20px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -445,6 +445,14 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+footer{
+    position: relative;
+    width: 100%;
+    bottom: 120px;
+    text-align: center;
+    padding: 10px;
+    font-size: var(--t-s-ss);
 }
 
 @media screen and (max-width:700px) {
@@ -637,8 +645,21 @@
         flex-direction: column;
         gap: 60px;
     }
+    .service-box h1{
+        font-weight: var(--t-b-bb);
+        font-size: var(--t-s-m);
+        font-family: var(--f-f-h2);
+    }
+    .service-box p{
+        font-family: var(--f-f-p);
+        font-size: var(--t-s-s);
+    }
+    .contact-section{
+        margin-top: 0;
+    }
     .contact-content{
         flex-direction: column-reverse;
+        gap: 30px;
     }
     #form-message{
         text-align: center;
