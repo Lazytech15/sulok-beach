@@ -1,3 +1,11 @@
+config={
+        enableTime: true,
+        dateFormat: "Y-m-d H:i",
+        altInput:true,
+        altFormat: "F j, Y (h:S K)"
+        }
+
+flatpickr("input[type=datetime-local]", config);
 
 function isViewportLessThan700px() {
     return window.innerWidth < 700;
@@ -33,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const showMoreButton = document.getElementById('showMoreButton');
     const hiddenImages = document.querySelectorAll('.gallery-content img:nth-child(n+4)');
     const serviceContent = document.getElementById('serviceContent');
+    const jumpGallery = document.getElementById('jump-gallery');
     let isHidden = true;
 
     function toggleHiddenImages() {
@@ -49,6 +58,9 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         } else {
             serviceContent.style.marginTop = '0';
+            
+            // Scroll to the jump-gallery anchor element after hiding images
+            jumpGallery.scrollIntoView({ behavior: 'smooth' });
         }
 
         showMoreButton.textContent = isHidden ? 'Hide' : 'Show More';
@@ -70,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
 
 
 

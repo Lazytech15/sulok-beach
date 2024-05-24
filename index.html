@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="general.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <title>Sulok Beach</title>
 </head>
 <body>
@@ -22,12 +23,40 @@
         <article class="intro-container">
             <figure class="intro-content">
                 <div class="welcome-text">
-                    <h2>Welcome to, Sulok Beach</h2>
+                    <h2>Welcome <span>to</span> Sulok Beach</h2>
                     <p class="info-text">Your Online Booking and Reservation site</p>
                     <p class="descript-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, deleniti inventore. Beatae perferendis odit libero eveniet aliquid ipsa exercitationem suscipit vitae minus sed dolor reprehenderit vel ipsum, et similique autem?</p>
                     <button>See More</button>
                 </div>
             </figure>
+            <section class="reserved-section">
+                <article class="reserved-container">
+                    <figure class="reserved-content">
+                        <h1>Reservation</h1>
+                        <p>welcome, Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quisquam magnam, perferendis nam facilis labore, ullam ea repudiandae natus perspiciatis culpa. Est in eaque temporibus velit voluptatem voluptas ipsam odio.</p>
+                    <form action="">
+                        <h1>Search Available</h1>
+                        <input class="datapicker" id="check-in" type="datetime-local" placeholder="Check-in">
+                        <input class="datapicker" id="check-out" type="datetime-local" placeholder="Check-out">
+                        <div class="select-person">
+                            <select name="" id="">
+                                <option value="" selected>Adults</option>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                            </select>
+                            <select name="" id="">
+                                <option value="" selected>Child</option>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                            </select>
+                        </div>
+                        <button type="submit">Search</button>
+                    </form>
+                    </figure>
+                </article>
+            </section>
             <section class="image-nav-bar-container">
                 <div class="image-nav-bar-content">
                     <div class="logo-header" id="header-nav">
@@ -54,6 +83,36 @@
             <article class="price-container">
                 <h3 class="info-text">Price</h3>
                 <figure class="price-content">
+                    <p><b>Sulok Beach</b> offers alot of goods Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum dolorem modi delectus eaque libero iusto excepturi, nobis, obcaecati odio culpa iure ex, quam quo temporibus corrupti neque labore cupiditate eius!</p>
+                    <div class="offers">
+                        <div class="bunddle1 bunddle">
+                                <img src="https://pix8.agoda.net/hotelImages/574/574592/574592_14060321430019689094.jpg?ca=2&ce=1&s=375x" alt="">   
+                            <div class="go-button">
+                                <p> <b>Bunddle 1</b> <br> offer a two wonderful cottage that included a sailing fan capable of occupation of 2 max of 4 person per house <hr> <br> 1x electric fan <br> 1x massage <br> 1x afternoon dinner</p>
+                                <div> 
+                                    <a href="" id="go-reserved" class="flex-icon" style="justify-content: center;">RESERVED</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bunddle2 bunddle">
+                            <img src="https://pix8.agoda.net/hotelImages/574/574592/574592_14060322220019689506.jpg?ca=2&ce=1&s=1024x" alt="">
+                            <div class="go-button">
+                                <p> <b>Bunddle 2</b> <br> offer a two wonderful cottage that included a sailing fan capable of occupation of 2 max of 4 person per house <hr> <br> 1x electric fan <br> 1x massage <br> 1x afternoon dinner</p>
+                                <div> 
+                                    <a href="" id="go-reserved" class="flex-icon" style="justify-content: center;">RESERVED</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bunddle3 bunddle">
+                            <img src="https://media-cdn.tripadvisor.com/media/photo-s/12/33/97/79/img-20180227-wa0085-largejpg.jpg" alt="">
+                            <div class="go-button">
+                                <p> <b>Bunddle 3</b> <br> offer a two wonderful cottage that included a sailing fan capable of occupation of 2 max of 4 person per house <hr> <br> 1x electric fan <br> 1x massage <br> 1x afternoon dinner</p>
+                                <div> 
+                                    <a href="" id="go-reserved" class="flex-icon" style="justify-content: center;">RESERVED</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     
                 </figure>
             </article>
@@ -94,12 +153,34 @@
             </article>
         </section>
         <a id="jump-contact"></a>
-        <br>
         <section class="contact-section">
             <article class="contact-container">
-                <h4 class="info-text">Contact</h4>
+                <h1 class="info-text" >Contact</h1>
                 <figure class="contact-content">
-
+                    <div class="formtext-container">
+                        <h1>CONTACT US</h1>
+                        <pre id="author-name" class="flex-icon">Name      :   <span>Jose Rizal  </span></pre>
+                        <pre id="author-phone" class="flex-icon">Phone     :   <span>09123456789</span></pre>
+                        <pre id="author-email" class="flex-icon">Email      :  <span> josebackshot@gmail.com  </span></pre>
+                        <br/>
+                        
+                    <div class="social-link">
+                        <a href=""><img src="https://cdn-icons-png.flaticon.com/128/2504/2504911.png" alt=""></a>
+                        <a href=""><img src="https://cdn-icons-png.flaticon.com/128/733/733547.png" alt=""></a>
+                        <a href=""><img src="https://cdn-icons-png.flaticon.com/128/3536/3536505.png" alt=""></a>
+                    </div>
+                    </div>
+                    <div class="form-container">
+                        <form action="" method="POST" id="form-message">
+                            <h4>PLEASE TELL US</h4>
+                            <input type="text" name="name" id="username" placeholder="Name" required>
+                            <input type="email" name="email" id="email" placeholder="Email" required>
+                            <textarea name="message" id="" cols="30" rows="5" itemid="message" placeholder="Message"></textarea>
+                            <br />
+                            <button type="submit" id="submit" class="contact-btn">SEND MESSAGE</button>
+                        </form> 
+                    </div>
+                    
                 </figure>
             </article>
         </section>
@@ -114,6 +195,8 @@
             </article>
         </section>
     </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="main.js" ></script>
 </body>
 </html>
