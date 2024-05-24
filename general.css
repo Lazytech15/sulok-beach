@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+/* font-family: "Open Sans", sans-serif;
+font-family: "Roboto", sans-serif;
+font-family: "Bebas Neue", sans-serif;
+font-family: "Righteous", sans-serif; */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+:root{
+    /* text sizing */
+    --t-s-xxxl:3.5em;
+    --t-s-xxl:3em;
+    --t-s-xl:2.5em;
+    --t-s-l:2em;
+    --t-s-m:1.5em;
+    --t-s-sm:1em;
+    --t-s-s:0.9em;
+    --t-s-ss:0.7em;
+
+    /* font-color */
+
+    --t-c-s1:#0017FF;
+    --t-c-s2:#2D40FF;
+    --t-c-s3:#5060FF ;
+    --t-c-s4:#6F7CFF ;
+    --t-c-s5:rgba(0, 57, 255, 0.2);
+    --t-c-s6:#ffffff;
+    --t-c-s7:#000000;
+    
+    /* text-bold */
+    --t-b-sl:400;
+    --t-b-l:500;
+    --t-b-lb:600;
+    --t-b-b:700;
+    --t-b-bb:800;
+
+    /* font-style */
+    --f-f-h:"Bebas Neue", sans-serif;
+    --f-f-h2:"Righteous", sans-serif;
+    --f-f-sh:"Roboto", sans-serif;
+    --f-f-p:"Open Sans", sans-serif;
+
+    /* transition-delay */
+    --t-d-d1:0.7s ease-in-out;
+    --t-d-d2:0.5s ease-in-out;
+    --t-d-d3:0.4s ease-in-out;
+    --t-d-d4:0.2s ease-in-out;
+}
