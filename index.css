@@ -598,7 +598,7 @@ body.dark-mode #form-message textarea{
 
     }
     .intro-content {
-        height: 35vh;
+        height: 30vh;
         justify-content: center;
     }
     
@@ -636,18 +636,18 @@ body.dark-mode #form-message textarea{
     }
     .reserved-section{
         margin: auto;
-        margin-top: 20px;
+        margin-top: 30px;
         width: 90%;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 40vh;
+        height: 45vh;
     }
     .reserved-content h1{
         font-family: var(--f-f-sh);
         text-transform: uppercase;
         font-weight: var(--t-b-bb);
-        margin-top: 10px ;
+        margin: 5px 0px;
         color: var(--t-c-s9);
     }
     .reserved-content p{
@@ -655,6 +655,11 @@ body.dark-mode #form-message textarea{
         font-size: var(--t-s-s);
         font-weight: var(--t-b-sl);
         margin-bottom: 10px;
+    }
+    .reserved-content label{
+        font-family: var(--f-f-sh);
+        font-size: var(--t-s-s);
+        font-weight: var(--t-b-l);
     }
     .reserved-content input{
         margin: 5px 0px;
@@ -706,9 +711,11 @@ body.dark-mode #form-message textarea{
         margin: 20px 0px;
     }
     .price-content p{
+        margin-top: -10px;
         font-size: var(--t-s-s);
     }
     .price-content span{
+        margin-bottom: 7px;
         margin-top: -15px;
         display: block;
         text-align: center;
