@@ -31,7 +31,7 @@ function toggleTheme() {
             logo_container = "assets/night-fire.png";
         } else {
             button.src = "assets/night-button.png";
-            introImage.style.backgroundImage = 'url("assets/summer-light-mode.png")';
+            introImage.style.backgroundImage = 'url("assets/summerlight.png")';
             logoImage.src = "assets/morning-palm.png";
             logo_container = "assets/morning-palm.png";
         }
