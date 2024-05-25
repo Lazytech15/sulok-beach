@@ -578,8 +578,9 @@ body.dark-mode #form-message textarea{
         margin-top: 55px;
 
     }
-    .intro-content {
+     .intro-content {
         height: 35vh;
+        justify-content: center;
     }
     
     .welcome-text{
@@ -588,6 +589,7 @@ body.dark-mode #form-message textarea{
         text-align: center;
         justify-content: center;
         align-items: center;
+        margin-left: 0;
     }
 
     .welcome-text h2{
