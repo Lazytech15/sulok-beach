@@ -1,11 +1,13 @@
-config={
+document.addEventListener("DOMContentLoaded", function() {
+    const config = {
         enableTime: true,
-        dateFormat: "Y-m-d H:i",
-        altInput:true,
-        altFormat: "F j, Y (h:S K)"
-        }
+        dateFormat: "Y-m-dTH:i",
+        altInput: true,
+        altFormat: "F j, Y (h:i K)"
+    };
 
-flatpickr("input[type=datetime-local]", config);
+    flatpickr("input[type=datetime-local]", config);
+});
 
 function isViewportLessThan700px() {
     return window.innerWidth < 700;

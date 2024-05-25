@@ -229,6 +229,15 @@ body{
 .reserved-section{
     display: none;
 }
+.reserved-content button{
+    border-radius: 10px;
+    border: none;
+    background-color: var(--b-c-y);
+    color: var(--t-c-s6);
+    font-size: var(--t-s-sm);
+    font-weight: var(--t-b-bb);
+    font-family: var(--f-f-p);
+}
 .price-section{
     display: flex;
     justify-content: center;
@@ -545,6 +554,16 @@ body.dark-mode #form-message h4,
 body.dark-mode .contact-content pre{
     color:var(--t-c-s6);
 }
+body.dark-mode .reserved-content input,
+body.dark-mode .reserved-content select{
+    border: 1px solid var(--b-c-sw);
+    background-color: var(--b-c-dg);
+    color:var(--t-c-s6);
+}
+body.dark-mode .reserved-content button{
+    background-color: var(--b-c-p);
+    color: var(--t-c-s6);
+}
 body.dark-mode #form-message input,
 body.dark-mode #form-message textarea{
     border: 1px solid var(--b-c-sw);
@@ -629,6 +648,7 @@ body.dark-mode #form-message textarea{
         text-transform: uppercase;
         font-weight: var(--t-b-bb);
         margin-top: 10px ;
+        color: var(--t-c-s9);
     }
     .reserved-content p{
         font-family: var(--f-f-p);
