@@ -10,6 +10,36 @@ flatpickr("input[type=datetime-local]", config);
 function isViewportLessThan700px() {
     return window.innerWidth < 700;
 }
+const button = document.getElementById('image_button');
+const introImage = document.querySelector('.intro-content');
+const logoImage = document.querySelector('.logo-image');
+let logo_container="assets/morning-palm.png";
+// Toggle dark mode
+function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(function(button) {
+        button.classList.toggle('dark-mode');
+    });
+    logoImage.style.opacity = '0';
+    button.style.opacity = '0';
+    setTimeout(function() {
+        if (button.getAttribute('src') === "assets/night-button.png") {
+            button.src = "assets/morning-button.png";
+            introImage.style.backgroundImage = 'url("assets/summer-dark-mode.jpg")';
+            logoImage.src = "assets/night-fire.png";
+            logo_container = "assets/night-fire.png";
+        } else {
+            button.src = "assets/night-button.png";
+            introImage.style.backgroundImage = 'url("assets/summer-light-mode.png")';
+            logoImage.src = "assets/morning-palm.png";
+            logo_container = "assets/morning-palm.png";
+        }
+        button.style.opacity = '1';
+        logoImage.style.opacity = '1';
+    }, 500);
+}
+// End here
 
 function scrollFunction() {
     if (isViewportLessThan700px()) return;
@@ -17,12 +47,16 @@ function scrollFunction() {
     const navigationButton = document.getElementsByClassName('image-nav-bar-container')[0];
     const navigationContent = document.getElementsByClassName('image-nav-bar-content')[0];
     const header_log = document.getElementById('header-nav');
+    const logo_Image2 = document.getElementById('second-logo');
     const navBarRect = navigationButton.getBoundingClientRect();
     const windowHeight = window.innerHeight || document.documentElement.clientHeight;
 
     if (!(navBarRect.top >= 0 && navBarRect.bottom <= windowHeight)) {
         navigationContent.classList.add('sticky-nav');
         header_log.style.display="flex";
+        logo_Image2.src = logo_container;
+        logo_Image2.style.width="50px"
+        logo_Image2.style.height="50px"
     } else {
         navigationContent.classList.remove('sticky-nav');
         header_log.style.display="none";
@@ -49,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (isHidden) {
             if (isViewportLessThanOrEqualTo700px()) {
                 let galleryHeight = gallerySection.scrollHeight;
-                galleryHeight = galleryHeight > 600 ? 600 : galleryHeight;
+                galleryHeight = galleryHeight > 0 ? 0 : galleryHeight;
                 serviceContent.style.marginTop = `${galleryHeight}px`;
             }
         } else {
@@ -86,25 +120,28 @@ document.addEventListener("DOMContentLoaded", function() {
     // Add event listener for hovering on .price-content .offers img
     const priceContentOffersImgs = document.querySelectorAll('.price-content .offers img');
 
-priceContentOffersImgs.forEach(img => {
-    img.addEventListener('mouseenter', function() {
-        img.style.height = '400px';
-        gallerySection.style.marginTop = '300px';
-    });
+    priceContentOffersImgs.forEach(img => {
+        img.addEventListener('mouseenter', function() {
+            if (isViewportLessThanOrEqualTo700px()) {
+                img.style.height = '400px';
+                gallerySection.style.marginTop = '300px';
+            }
+        });
 
-    img.addEventListener('mouseleave', function() {
-        img.style.height = ''; 
-        gallerySection.style.marginTop = '80px';
-        if (isHidden && isViewportLessThanOrEqualTo700px()) {
-            let galleryHeight = gallerySection.scrollHeight;
-            galleryHeight = galleryHeight > 600 ? 600 : galleryHeight;
-            serviceContent.style.marginTop = `${galleryHeight}px`;
-        } else {
-            gallerySection.style.marginTop = '0';
-        }
+        img.addEventListener('mouseleave', function() {
+            img.style.height = ''; 
+            gallerySection.style.marginTop = '40px';
+            if (isHidden && isViewportLessThanOrEqualTo700px()) {
+                let galleryHeight = gallerySection.scrollHeight;
+                galleryHeight = galleryHeight > 600 ? 600 : galleryHeight;
+                serviceContent.style.marginTop = `${galleryHeight}px`;
+            } else {
+                gallerySection.style.marginTop = '0';
+            }
+        });
     });
 });
-});
+
 
 
 

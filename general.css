@@ -33,6 +33,19 @@ html{
     --t-c-s5:rgba(0, 57, 255, 0.2);
     --t-c-s6:#ffffff;
     --t-c-s7:#000000;
+    --t-c-s8:#f53656;
+    --t-c-s9:#ff9900;
+
+    /* background-color */
+    --b-c-p:#f33050;
+    --b-c-y:#ff9900;
+    --b-c-b:#000000c9;
+    --b-c-w:#ffffff;
+    --b-c-sw:#f5f2f2c9;
+    --b-c-dg:#2c2c2c93;
+    --b-c-db:#000000;
+    --b-c-sb:#0000008c;
+    --b-c-ddg:#2c2c2c;
     
     /* text-bold */
     --t-b-sl:400;
