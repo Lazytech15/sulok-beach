@@ -735,7 +735,7 @@ body.dark-mode #form-message textarea{
         display: block;
         margin-top: 5px;
         padding: 5px;
-        width: 80%;
+        width: 75%;
         border: none;
         background-color: var(--b-c-y);
         color: var(--t-c-s6);
