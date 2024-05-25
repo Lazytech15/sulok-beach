@@ -567,6 +567,9 @@ footer{
         width: 30px;
         height: 30px;
     }
+    .nav-bar-icon img:hover{
+        transform: scale(1.3);
+    }
     .nav-bar-icon ul{
         gap: 20px;
         margin-left: -6px;
