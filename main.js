@@ -91,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         hiddenText.forEach(Text => {
             Text.style.display = isHidden ? 'block' : 'none';
+            Text.style.fontSize = isHidden ? 'var(--t-s-ss)' : 'var(--t-s-ss)';
         });
 
         if (isHidden) {
@@ -124,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         hiddenText.forEach(text => {
             text.style.display = 'none';
+            text.style.fontSize ='var(--t-s-ss)';
         });
     }
     

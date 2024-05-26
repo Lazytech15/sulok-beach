@@ -164,6 +164,8 @@ body{
     font-family: var(--f-f-sh);
     font-weight: var(--t-b-bb);
     color: var(--t-c-s7);
+    
+    -webkit-tap-highlight-color: transparent;
 }
 .nav-bar-icon img{
     width: 40px;
@@ -768,7 +770,7 @@ body.dark-mode #form-message textarea{
         margin: auto;
         width: 75%;
         display: block;
-        font-size: var(--t-s-s);
+        font-size: var(--t-s-ss);
         font-family: var(--f-f-p);
     }
     .gallery-content img:hover{
