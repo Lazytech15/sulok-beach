@@ -68,7 +68,7 @@
                     <nav class="nav-bar-icon">
                         <ul>
                             <li><a href="#"><img src="assets/home.png" alt="">Home</a></li>
-                            <li><a href="#"><img src="assets/booking.png" alt="">Book</a></li>
+                            <li><a href="#" id="bookingbtn"><img src="assets/booking.png" alt="">Book</a></li>
                             <li><a href="#jump-price"><img src="assets/price.png" alt="">Price</a></li>
                             <li><a href="#jump-gallery"><img src="assets/gallery.png" alt="">Gallery</a></li>
                             <li><a href="#serviceContent"><img src="assets/service.png" alt="">Service</a></li>
@@ -80,6 +80,46 @@
             </section>
         </article>
         <br>
+        <section class="book-section">
+            <article class="book-container">
+                <figure class="book-content" id="overlay">
+                        <form action="" id="user-booking" class="user-booking">
+                            <h1>Booking Online <span>Make Schedule Now!</span></h1>
+                            <div class="checkin">
+                                <label for="check-in">Check-In:</label>
+                                <input class="datapicker" name="check-in" id="check-in" type="datetime-local" placeholder ="Duration start">
+                            </div>
+                            <div class="checkout">
+                                <label for="check-out">Check-Out:</label>
+                                <input class="datapicker" name="check-out" id="check-out" type="datetime-local" placeholder ="Duration end">
+                            </div>
+                            <div class="select-person">
+                                <div class="adult-container">
+                                    <label for="selectadult">Persons</label>
+                                    <select name="selectadult" id="selectadult">
+                                        <option value="" selected>Adults</option>
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                    </select>
+                                </div>
+                                <div class="child-container">
+                                <select name="selectchild" id="selectchild">
+                                    <option value="" selected>Child</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="userbtn">
+                                <button type="submit">Submit</button>
+                                <button id="cancelbtn">cancel</button>
+                            </div>
+                        </form>
+                </figure>
+            </article>
+        </section>
         <a id="jump-price"></a>
         <br>
         <section class="price-section">

@@ -1,3 +1,13 @@
+const booking = document.getElementById('overlay');
+const Openbooking = document.getElementById('bookingbtn');
+const cancelbtn = document.getElementById('cancelbtn');
+Openbooking.addEventListener('click', function(){
+    booking.style.display="block";
+})
+cancelbtn.addEventListener('click', function(){
+    booking.style.display="none";
+})
+
 document.addEventListener("DOMContentLoaded", function() {
     const config = {
         enableTime: true,

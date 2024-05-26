@@ -240,6 +240,101 @@ body{
     font-weight: var(--t-b-bb);
     font-family: var(--f-f-p);
 }
+
+/* booking */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+    display: none; 
+}
+.user-booking {
+    color: var(--t-c-s7);
+    font-size: 16px;
+    font-weight: 700;
+    position: fixed; 
+    top: 40%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    min-width: 80%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 2;
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--b-c-w);
+    flex-wrap: nowrap;
+}
+.user-booking h1{
+    font-size: var(--t-s-l);
+    color: var(--t-c-s9);
+}
+.user-booking span{
+    color: var(--t-c-s7);
+}
+.checkin,
+.checkout{
+    display: flex;
+    flex-direction: column;
+}
+.checkin input,
+.checkout input{
+    padding: 10px;
+}
+.checkin label,
+.checkout label{
+    font-size: var(--t-s-s);
+}
+.user-booking span{
+    font-size: var(--t-s-ss);
+    display: block;
+    font-weight: var(--t-b-sl);
+}
+.select-person{
+    display: flex;
+    flex-direction: row;
+}
+.select-person select{
+    max-width: 100%;
+    padding: 10px;
+    flex-wrap: nowrap;
+}
+.adult-container{
+    display: flex;
+    flex-direction: column;
+}
+.child-container{
+    margin-left: 10px;
+    margin-top: 22px;
+}
+.userbtn{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+.userbtn button{
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--b-c-y);
+    color: var(--t-c-s6);
+    font-family: var(--f-f-h2);
+    border: none;
+    transition: var(--t-d-d3);
+    margin-left: -20px;
+}
+.user-booking button:hover{
+    background-color:#ffaf38;
+}
+/* end here */
+
 .price-section{
     display: flex;
     justify-content: center;
@@ -703,6 +798,50 @@ body.dark-mode #form-message textarea{
         gap: 20px;
         margin-left: -6px;
     }
+
+    /* booking section */
+    .user-booking {
+        display: flex;
+        flex-direction: column;
+        top: 50%;
+    }
+    .user-booking h1,
+    .user-booking span{
+        text-align: center;
+    }
+    .user-booking label{
+        margin-top: 10px;
+    }
+    .checkin,
+    .checkout{
+        width: 100%;
+    }
+    .select-person{
+        width: 100%;
+    }
+    .adult-container,
+    .child-container{
+        width: 100%;
+    }
+    .select-person select{
+        width: 100%;
+    }
+    .child-container{
+        margin-top: 32px;
+        margin-bottom: 20px;
+    }
+    .userbtn{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    .userbtn button{
+        margin: auto;
+        width: 45%;
+    }
+    /* end */
+
+
     .price-section{
         height: 100vh;
         display: flex;
@@ -864,6 +1003,28 @@ body.dark-mode #form-message textarea{
         font-size: var(--t-s-sm);
         font-weight: var(--t-b-b);
         font-family: var(--f-f-h2);
+        background-color: var(--b-c-p);
+    }
+    body.dark-mode .user-booking h1{
+        color: var(--t-c-s8);
+    }
+    body.dark-mode .user-booking span{
+        color: var(--t-c-s9);
+    }
+    body.dark-mode .user-booking{
+        background-color: var(--b-c-ddg);
+    }
+    body.dark-mode .user-booking{
+        color: var(--t-c-s6);
+    }
+    body.dark-mode .user-booking input,
+    body.dark-mode .user-booking select{
+        border-radius: 5px;
+        color: var(--t-c-s6);
+        border: 1px solid var(--b-c-sw);
+        background-color: var(--b-c-dg);
+    }
+    body.dark-mode .user-booking button{
         background-color: var(--b-c-p);
     }
 }
