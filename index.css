@@ -889,6 +889,8 @@ body.dark-mode #form-message textarea{
         transform: translateY(-30%);
         opacity: 1; 
     }
+
+    /* gallery mobile */
     .gallery-section{
         height: auto;
         display: flex;
@@ -915,7 +917,7 @@ body.dark-mode #form-message textarea{
     }
     .gallery-content img:hover{
         transform: scale(1.3);
-        margin: 10px 0px;
+        margin: 20px 0px;
     }
     .gallery-content img:nth-child(n+4),
     .gallery-content p:nth-child(n+5) {
@@ -934,6 +936,7 @@ body.dark-mode #form-message textarea{
         font-family: var(--f-f-h2);
         font-weight: var(--t-b-sl);
     }
+    /* end here */
 
     .service-section{
         margin-top: 20px;
