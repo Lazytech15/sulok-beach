@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", function() {
         dateFormat: "Y-m-dTH:i",
         altInput: true,
         altFormat: "F j, Y (h:i K)",
-        minDate: "today"
+        minDate: "today",
+        disableMobile: "true"
     };
 
     flatpickr("input[type=datetime-local]", config);
