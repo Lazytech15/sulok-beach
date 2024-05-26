@@ -360,6 +360,9 @@ body{
     height: 200px;
     border-radius: 10px;
 }
+.gallery-content p{
+    display: none;
+}
 .service-section{
     margin: auto;
     width: 80%;
@@ -665,14 +668,17 @@ body.dark-mode #form-message textarea{
         margin: 5px 0px;
         padding: 10px;
         width: 100%;
+        border-radius: 5px;
     }
     .reserved-content .select-person{
         display: flex;
-        justify-content: space-around;
+        flex-direction: row;
+        gap: 5px;
     }
     .select-person select{
         width: 50%;
         padding: 5px;
+        border-radius: 5px;
     }
     .reserved-content button{
         margin-top: 5px;
@@ -745,32 +751,42 @@ body.dark-mode #form-message textarea{
         height: auto;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        margin-top: 40px;
+        margin-top: 35px;
         margin-bottom: 20px;
     }
     .gallery-content{
         flex-direction: column;
         gap: 10px;
         z-index: 99999;
+        align-items: center;
     }
     .gallery-content img{
         height: 150px;
     }
-    .gallery-content img:nth-child(n+4) {
+    .gallery-content p{
+        text-align: center;
+        margin: auto;
+        width: 75%;
+        display: block;
+    }
+    .gallery-content img:active{
+        transform: scale(1.2);
+        margin: 10px 0px;
+    }
+    .gallery-content img:nth-child(n+4),
+    .gallery-content p:nth-child(n+5) {
         display: none;
     }
     .gallery-section #showMoreButton{
         display: block;
-        margin-top: 5px;
+        margin-top: 10px;
         padding: 5px;
         width: 75%;
         border: none;
         background-color: var(--b-c-y);
         color: var(--t-c-s6);
         text-transform: uppercase;
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius:20px;
+        border-radius: 20px;
         font-family: var(--f-f-h2);
         font-weight: var(--t-b-sl);
     }
@@ -801,6 +817,17 @@ body.dark-mode #form-message textarea{
     #form-message{
         text-align: center;
     }
+    #form-message button{
+        width: 100%;
+        font-size: var(--t-s-sm);
+        font-weight: var(--t-b-b);
+        font-family: var(--f-f-h2);
+        background-color: var(--b-c-y);
+    }
+    .social-link img{
+        width: 20px;
+        height: 20px;
+    }
     footer{
         position: relative;
         width: 100%;
@@ -827,5 +854,12 @@ body.dark-mode #form-message textarea{
     body.dark-mode .gallery-section #showMoreButton{
         background-color: var(--b-c-p);
         color: var(--t-c-s6);
+    }
+    body.dark-mode #form-message button{
+        width: 100%;
+        font-size: var(--t-s-sm);
+        font-weight: var(--t-b-b);
+        font-family: var(--f-f-h2);
+        background-color: var(--b-c-p);
     }
 }

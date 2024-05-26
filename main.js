@@ -72,6 +72,7 @@ if (!isViewportLessThan700px()) {
 document.addEventListener("DOMContentLoaded", function() {
     const showMoreButton = document.getElementById('showMoreButton');
     const hiddenImages = document.querySelectorAll('.gallery-content img:nth-child(n+4)');
+    const hiddenText = document.querySelectorAll('.gallery-content p:nth-child(n+5)');
     const serviceContent = document.getElementById('serviceContent');
     const jumpGallery = document.getElementById('jump-gallery');
     const gallerySection = document.querySelector('.gallery-section');
@@ -80,6 +81,9 @@ document.addEventListener("DOMContentLoaded", function() {
     function toggleHiddenImages() {
         hiddenImages.forEach(img => {
             img.style.display = isHidden ? 'block' : 'none';
+        });
+        hiddenText.forEach(Text => {
+            Text.style.display = isHidden ? 'block' : 'none';
         });
 
         if (isHidden) {
@@ -107,6 +111,9 @@ document.addEventListener("DOMContentLoaded", function() {
     if (isViewportLessThanOrEqualTo700px()) {
         hiddenImages.forEach(img => {
             img.style.display = 'none';
+        });
+        hiddenText.forEach(text => {
+            text.style.display = 'none';
         });
     } else {
         hiddenImages.forEach(img => {
