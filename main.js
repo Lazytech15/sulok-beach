@@ -1,3 +1,4 @@
+// mobile-view reserved
 const booking = document.getElementById('overlay');
 const Openbooking = document.getElementById('bookingbtn');
 const cancelbtn = document.getElementById('cancelbtn');
@@ -7,19 +8,23 @@ Openbooking.addEventListener('click', function(){
 cancelbtn.addEventListener('click', function(){
     booking.style.display="none";
 })
+//end mobile-view
 
+// calendar
 document.addEventListener("DOMContentLoaded", function() {
     const config = {
         enableTime: true,
         dateFormat: "Y-m-dTH:i",
         altInput: true,
-        altFormat: "F j, Y (h:i K)"
+        altFormat: "F j, Y (h:i K)",
+        minDate: "today"
     };
 
     flatpickr("input[type=datetime-local]", config);
 });
+// end-calendar
 
-
+// dark-mode
 const button = document.getElementById('image_button');
 const introImage = document.querySelector('.intro-content');
 const logoImage = document.querySelector('.logo-image');
@@ -49,7 +54,7 @@ function toggleTheme() {
         logoImage.style.opacity = '1';
     }, 500);
 }
-// End here
+// End dark-mode
 
 // sticky nav bar
 function isViewportLessThan700px() {
@@ -79,9 +84,13 @@ function scrollFunction() {
 
 if (!isViewportLessThan700px()) {
     window.onscroll = scrollFunction;
+    window.onload = GalleryImageView;
 }
-//end
+//end sticky nav-bar
 
+
+// gallery mobile-view adjust the margin top of service when clicking the showMore
+// and ensure that this will work only in screen size of 700 
 document.addEventListener("DOMContentLoaded", function() {
     const showMoreButton = document.getElementById('showMoreButton');
     const hiddenImages = document.querySelectorAll('.gallery-content img:nth-child(n+4)');
@@ -170,8 +179,9 @@ document.addEventListener("DOMContentLoaded", function() {
             img.style.display = 'block';
         });
     }
+    //end gallery mobile-view
     
-    // Add event listener for hovering on .price-content .offers img
+    // price adjust the gallery section when it's expanded
     const priceContentOffersImgs = document.querySelectorAll('.price-content .offers img');
     priceContentOffersImgs.forEach(img => {
         img.addEventListener('mouseenter', function() {
@@ -195,6 +205,49 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   
 });
+// end price
+
+// gallery desktop-view, in big screen the image will expand to center and also add a new set of css
+// to the gallery to adjust when the user clicked a specific image and ensure that this function will work only with screen size above 700
+function GalleryImageView(){
+const galleryImages = document.querySelectorAll('.gallery-image');
+const galleryTexts = document.querySelectorAll('.gallery-content p');
+const closeButtons = document.querySelectorAll('.closegallery');
+
+galleryImages.forEach((image, index) => {
+    image.addEventListener('click', () => {
+        image.classList.toggle('Image-expanded');
+        const galleryText = galleryTexts[index];
+        galleryText.classList.toggle('Text-expanded');
+        galleryText.style.display = "flex";
+        closeButtons.forEach(closebtn => {
+            closebtn.classList.add('close-Gallery');
+            closebtn.style.display = "flex";
+        });
+    });
+});
+
+closeButtons.forEach((closebtn, index) => {
+    closebtn.addEventListener('click', () => {
+        galleryImages.forEach(image => {
+            image.classList.remove('Image-expanded');
+        });
+        galleryTexts.forEach(galleryText => {
+            galleryText.classList.remove('Text-expanded');
+            galleryText.style.display = "none";
+        });
+        closeButtons.forEach(closebtn => {
+            closebtn.classList.remove('close-Gallery');
+            closebtn.style.display = "none";
+        });
+    });
+});
+}
+//end Gallery-DesktopView
+
+
+
+
 
 
 
