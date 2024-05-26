@@ -691,6 +691,29 @@ body.dark-mode .welcome-text button{
     background-color: var(--b-c-p);
     color: var(--t-c-s6);
 }
+body.dark-mode .user-booking h1{
+    color: var(--t-c-s8);
+}
+body.dark-mode .user-booking span{
+    color: var(--t-c-s9);
+}
+body.dark-mode .user-booking{
+    background-color: var(--b-c-ddg);
+}
+body.dark-mode .user-booking{
+    color: var(--t-c-s6);
+}
+body.dark-mode .user-booking input,
+body.dark-mode .user-booking select{
+    border-radius: 5px;
+    color: var(--t-c-s6);
+    border: 1px solid var(--b-c-sw);
+    background-color: var(--b-c-dg);
+}
+body.dark-mode .user-booking button{
+    background-color: var(--b-c-p);
+}
+
 body.dark-mode .image-nav-bar-content{
     background-color: var(--b-c-b);
 }
@@ -1074,26 +1097,5 @@ body.dark-mode #form-message textarea{
         font-family: var(--f-f-h2);
         background-color: var(--b-c-p);
     }
-    body.dark-mode .user-booking h1{
-        color: var(--t-c-s8);
-    }
-    body.dark-mode .user-booking span{
-        color: var(--t-c-s9);
-    }
-    body.dark-mode .user-booking{
-        background-color: var(--b-c-ddg);
-    }
-    body.dark-mode .user-booking{
-        color: var(--t-c-s6);
-    }
-    body.dark-mode .user-booking input,
-    body.dark-mode .user-booking select{
-        border-radius: 5px;
-        color: var(--t-c-s6);
-        border: 1px solid var(--b-c-sw);
-        background-color: var(--b-c-dg);
-    }
-    body.dark-mode .user-booking button{
-        background-color: var(--b-c-p);
-    }
+    
 }
