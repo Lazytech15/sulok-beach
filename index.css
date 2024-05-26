@@ -768,6 +768,7 @@ body.dark-mode #form-message textarea{
         margin: auto;
         width: 75%;
         display: block;
+        font-size: var(--t-s-s);
     }
     .gallery-content img:active{
         transform: scale(1.2);

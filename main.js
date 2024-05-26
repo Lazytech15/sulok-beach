@@ -9,9 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     flatpickr("input[type=datetime-local]", config);
 });
 
-function isViewportLessThan700px() {
-    return window.innerWidth < 700;
-}
+
 const button = document.getElementById('image_button');
 const introImage = document.querySelector('.intro-content');
 const logoImage = document.querySelector('.logo-image');
@@ -43,6 +41,10 @@ function toggleTheme() {
 }
 // End here
 
+// sticky nav bar
+function isViewportLessThan700px() {
+    return window.innerWidth < 700;
+}
 function scrollFunction() {
     if (isViewportLessThan700px()) return;
 
@@ -68,6 +70,7 @@ function scrollFunction() {
 if (!isViewportLessThan700px()) {
     window.onscroll = scrollFunction;
 }
+//end
 
 document.addEventListener("DOMContentLoaded", function() {
     const showMoreButton = document.getElementById('showMoreButton');
@@ -77,6 +80,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const jumpGallery = document.getElementById('jump-gallery');
     const gallerySection = document.querySelector('.gallery-section');
     let isHidden = true;
+    // Function to check if viewport width is less than or equal to 700px
+    function isViewportLessThanOrEqualTo700px() {
+        return window.innerWidth <= 700;
+    }
 
     function toggleHiddenImages() {
         hiddenImages.forEach(img => {
@@ -94,8 +101,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         } else {
             serviceContent.style.marginTop = '0';
-            
-            // Scroll to the jump-gallery anchor element after hiding images
+
             jumpGallery.scrollIntoView({ behavior: 'smooth' });
         }
 
@@ -107,7 +113,39 @@ document.addEventListener("DOMContentLoaded", function() {
         toggleHiddenImages();
     });
 
-    // Set initial image visibility based on viewport width
+    function isGallerySectionVisible() {
+        const galleryRect = gallerySection.getBoundingClientRect();
+        return galleryRect.top < window.innerHeight && galleryRect.bottom > 0;
+    }
+    
+    function hideImagesAndText() {
+        hiddenImages.forEach(img => {
+            img.style.display = 'none';
+        });
+        hiddenText.forEach(text => {
+            text.style.display = 'none';
+        });
+    }
+    
+    window.addEventListener('scroll', function() {
+        if (window.innerWidth <= 700) {
+            if (isGallerySectionVisible()) {
+                // do nothing
+            } else {
+                hideImagesAndText();
+                showMoreButton.textContent = 'Show More';
+            }
+        }
+    });
+    if (window.innerWidth <= 700 && !isGallerySectionVisible()) {
+        hiddenImages.forEach(img => {
+            img.style.display = 'block';
+        });
+        hideImagesAndText();
+        showMoreButton.textContent = 'Show More';
+    }
+    
+
     if (isViewportLessThanOrEqualTo700px()) {
         hiddenImages.forEach(img => {
             img.style.display = 'none';
@@ -120,15 +158,9 @@ document.addEventListener("DOMContentLoaded", function() {
             img.style.display = 'block';
         });
     }
-
-    // Function to check if viewport width is less than or equal to 700px
-    function isViewportLessThanOrEqualTo700px() {
-        return window.innerWidth <= 700;
-    }
     
     // Add event listener for hovering on .price-content .offers img
     const priceContentOffersImgs = document.querySelectorAll('.price-content .offers img');
-
     priceContentOffersImgs.forEach(img => {
         img.addEventListener('mouseenter', function() {
             if (isViewportLessThanOrEqualTo700px()) {
@@ -149,6 +181,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
+  
 });
 
 
