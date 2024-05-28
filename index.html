@@ -38,28 +38,28 @@
                     <figure class="reserved-content">
                         <h1>Reservation</h1>
                         <p>welcome, Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quisquam magnam, perferendis nam facilis labore, ullam ea repudiandae natus perspiciatis culpa. Est in eaque temporibus velit voluptatem voluptas ipsam odio.</p>
-                    <form action="">
-                        <h1>Search Available</h1>
-                        <label for="check-in">Check-In:</label>
-                        <input class="datapicker" name="check-in" id="check-in" type="datetime-local" placeholder ="Plan to Check-in">
-                        <label for="check-out">Check-Out:</label>
-                        <input class="datapicker" name="check-out" id="check-out" type="datetime-local" placeholder ="Plan to Check-out">
-                        <div class="select-person">
-                            <select name="" id="">
-                                <option value="" selected>Adults</option>
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                            </select>
-                            <select name="" id="">
-                                <option value="" selected>Child</option>
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                            </select>
-                        </div>
-                        <button type="submit">Search</button>
-                    </form>
+                        <form action="">
+                            <h1>Search Available</h1>
+                            <label for="check-in">Check-In:</label>
+                            <input class="datapicker" name="check-in" id="check-in" type="datetime-local" placeholder ="Plan to Check-in">
+                            <label for="check-out">Check-Out:</label>
+                            <input class="datapicker" name="check-out" id="check-out" type="datetime-local" placeholder ="Plan to Check-out">
+                            <div class="select-person">
+                                <select name="" id="">
+                                    <option value="" selected>Adults</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                </select>
+                                <select name="" id="">
+                                    <option value="" selected>Child</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                </select>
+                            </div>
+                            <button type="submit">Search</button>
+                        </form>
                     </figure>
                 </article>
             </section>
@@ -92,7 +92,8 @@
             <article class="book-container">
                 <figure class="book-content" id="overlay">
                         <form action="" id="user-booking" class="user-booking">
-                            <h1>Booking Online <span>Make Schedule Now!</span></h1>
+                            <div class="book-details">
+                            <h1>Sulok Beach <span>Online Booking!</span></h1>
                             <div class="checkin">
                                 <label for="check-in">Check-In:</label>
                                 <input class="datapicker" name="check-in" id="check-in" type="datetime-local" placeholder ="Duration start">
@@ -109,6 +110,8 @@
                                         <option value="">1</option>
                                         <option value="">2</option>
                                         <option value="">3</option>
+                                        <option value="">4</option>
+                                        <option value="">5</option>
                                     </select>
                                 </div>
                                 <div class="child-container">
@@ -117,13 +120,57 @@
                                     <option value="">1</option>
                                     <option value="">2</option>
                                     <option value="">3</option>
+                                    <option value="">4</option>
+                                    <option value="">5</option>
                                 </select>
                                 </div>
                             </div>
                             <div class="userbtn">
-                                <button type="submit">Submit</button>
+                                <button type="submit">Search</button>
                                 <button type="reset" id="cancelbtn">cancel</button>
                             </div>
+                        </div>
+                        <h1>Available Cottage</h1>
+                            <div class="available-cottage">
+                                <div class="bunddle-container">
+                                <div class="cottage-one bunddle">
+                                        <img src="assets/bunddle1.png" alt="" >   
+                                    <div class="go-button">
+                                        <p>Good for 2 person</p>
+                                        <div> 
+                                            <a href="" id="go-reserved" class="flex-icon" style="justify-content: center;">SELECT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cottage-two bunddle">
+                                    <img src="assets/bunddle2.png" alt=""  >   
+                                    <div class="go-button">
+                                        <p>Good for 2 person</p>
+                                        <div> 
+                                            <a href="" id="go-reserved" class="flex-icon" style="justify-content: center;">SELECT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cottage-three bunddle">
+                                    <img src="assets/bunddle3.png" alt="" >   
+                                    <div class="go-button">
+                                        <p>Good for 2 person</p>
+                                        <div> 
+                                            <a href="" id="go-reserved" class="flex-icon" style="justify-content: center;">SELECT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cottage-three bunddle" >
+                                    <img src="assets/bunddle3.png" alt="">   
+                                    <div class="go-button">
+                                        <p>Good for 2 person</p>
+                                        <div> 
+                                            <a href="" id="go-reserved" class="flex-icon" style="justify-content: center;">SELECT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         </form>
                 </figure>
             </article>
@@ -179,19 +226,19 @@
         <section class="gallery-section">
             <article class="gallery-container">
                 <h3 class="info-text">Gallery</h3>
-                <figure class="gallery-content" id="gallert-overlay">
+                <figure class="gallery-content" id="gallery-overlay">
                     <img src="assets/image1.png" alt="" class="gallery-image">
-                    <p class="g-p">sulok beach scene with clear blue skies, a calm turquoise sea, and white sandy shores.</p>
+                    <p class="g-p">sulok beach scene with clear blue skies, a calm turquoise sea,<br> and white sandy shores.</p>
                     <img src="assets/image2.png" alt="" class="gallery-image">
-                    <p class="g-p">The image features a picturesque tropical beach with white sand, clear blue water, and lush palm trees.</p>
+                    <p class="g-p">The image features a picturesque tropical beach with white sand,<br> clear blue water, and lush palm trees.</p>
                     <img src="assets/image3.png" alt="" class="gallery-image">
-                    <p class="g-p">a beautiful tropical beach scene with clear blue water, a sandy shore, and several palm trees under a mostly clear sky with a few scattered clouds.</p>
+                    <p class="g-p">a beautiful tropical beach scene with clear blue water, a sandy shore, and several palm trees <br> under a mostly clear sky with a few scattered clouds.</p>
                     <img src="assets/image4.png" alt="" class="gallery-image">
-                    <p class="g-p">twilight scene at a resort, featuring an illuminated pool leading to buildings with lit interiors, palm trees against a blue and orange sky, and pathway lights reflecting on the water.</p>
+                    <p class="g-p">twilight scene at a resort, featuring an illuminated pool leading to buildings with lit <br> interiors, palm trees against a blue and orange sky, and pathway lights reflecting on the water.</p>
                     <img src="assets/image5.png" alt="" class="gallery-image">
-                    <p class="g-p">beach scene at twilight with blurred motion, likely from a long exposure, featuring deep blues and purples in the sky and water, with a brightly lit beach foreground.</p>
+                    <p class="g-p">beach scene at twilight with blurred motion, likely from a long exposure, featuring <br> deep blues and  purples in the sky and water, with a brightly lit beach foreground.</p>
                     <img src="assets/image6.png" alt="" class="gallery-image">
-                    <p class="g-p">a peaceful tropical beach setting with clear blue skies, a calm ocean, white sand, palm trees providing shade, and two red lounge chairs, ideal for relaxation and leisure.</p>
+                    <p class="g-p">a peaceful tropical beach setting with clear blue skies, a calm ocean, white sand,  palm trees <br> providing shade, and two red lounge chairs, ideal for relaxation and leisure.</p>
                 </figure>
                 <button class="closegallery" id="closegallery"><img src="assets/close.png" alt=""></button>
             </article>

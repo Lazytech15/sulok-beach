@@ -243,7 +243,24 @@ closeButtons.forEach((closebtn, index) => {
         });
     });
 });
+window.addEventListener('scroll', function() {
+    galleryImages.forEach(image => {
+        image.classList.remove('Image-expanded');
+    });
+    galleryTexts.forEach(galleryText => {
+        galleryText.classList.remove('Text-expanded');
+        galleryText.style.display = "none";
+    });
+    closeButtons.forEach(closebtn => {
+        closebtn.classList.remove('close-Gallery');
+        closebtn.style.display = "none";
+    });
+});
+
 }
+
+
+
 //end Gallery-DesktopView
 
 

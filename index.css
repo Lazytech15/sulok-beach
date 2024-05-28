@@ -244,6 +244,7 @@ body{
 .reserved-section{
     display: none;
 }
+
 .reserved-content button{
     border-radius: 10px;
     border: none;
@@ -268,10 +269,10 @@ body{
 }
 .user-booking {
     color: var(--t-c-s7);
-    font-size: 16px;
-    font-weight: 700;
+    font-size: var(--t-s-sm);
+    font-weight:var(--t-b-b);
     position: fixed; 
-    top: 40%; 
+    top: 50%; 
     left: 50%; 
     transform: translate(-50%, -50%); 
     width: 80%;
@@ -279,9 +280,10 @@ body{
     padding: 20px;
     border-radius: 10px;
     z-index: 2;
-    font-family: "Open Sans", sans-serif;
+    font-family: var(--f-f-p);
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 2rem;
     align-items: center;
     background-color: var(--b-c-w);
     flex-wrap: nowrap;
@@ -315,6 +317,7 @@ body{
 .select-person{
     display: flex;
     flex-direction: row;
+    margin-right: 10px;
 }
 .select-person select{
     max-width: 100%;
@@ -348,6 +351,37 @@ body{
 .user-booking button:hover{
     background-color:#ffaf38;
 }
+.book-details{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap: 1.5rem;
+}
+.available-cottage{
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+.available-cottage h1{
+    font-size: var(--t-s-m);
+    font-family: var(--f-f-sh);
+    margin-bottom: 5px;
+}
+.bunddle-container{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    /* display: none; */
+}
+.bunddle img{
+    width: 300px;
+    height: 200px;
+}
+
 /* end booking */
 
 /* price-section */
@@ -497,7 +531,9 @@ body{
     position: fixed; 
     bottom: 100px;
     text-align: center;
-    width: 40%;
+    margin: auto;
+    text-wrap: nowrap;
+    flex-shrink: 1;
 }
 .close-Gallery {
     position: fixed;
@@ -730,6 +766,9 @@ body.dark-mode .sticky-nav .nav-bar-icon a:hover::after{
 body.dark-mode .info-text{
     color: var(--t-c-s8);
 }
+body.dark-mode .Image-expanded{
+    background-color: var(--b-c-ddg);
+}
 body.dark-mode .service-box{
     border-color: var(--b-c-sw);
 }
@@ -892,7 +931,9 @@ body.dark-mode #form-message textarea{
     .user-booking {
         display: flex;
         flex-direction: column;
-        top: 50%;
+        top: 52%;
+        height: auto;
+        overflow: hidden;
     }
     .user-booking h1,
     .user-booking span{
@@ -927,6 +968,39 @@ body.dark-mode #form-message textarea{
     .userbtn button{
         margin: auto;
         width: 45%;
+    }
+    .book-details{
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+    .available-cottage{
+        overflow-y: overlay;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    .available-cottage::-webkit-scrollbar-track{
+        border: 1px solid var(--b-c-dg);
+    }
+    .available-cottage::-webkit-scrollbar{
+        height: 3px;
+
+    }
+    .available-cottage::-webkit-scrollbar-thumb{
+        background-color: var(--b-c-y);
+    }
+    .user-booking h1{
+        font-size: var(--t-s-m);
+        margin: -10px 0px;
+    }
+    .bunddle-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .bunddle-container img{
+        width: 250px;
     }
     /* end */
 
@@ -1095,6 +1169,12 @@ body.dark-mode #form-message textarea{
         font-size: var(--t-s-sm);
         font-weight: var(--t-b-b);
         font-family: var(--f-f-h2);
+        background-color: var(--b-c-p);
+    }
+    body.dark-mode .available-cottage::-webkit-scrollbar-track{
+        border: 1px solid var(--b-c-sw);
+    }
+    body.dark-mode .available-cottage::-webkit-scrollbar-thumb{
         background-color: var(--b-c-p);
     }
     
