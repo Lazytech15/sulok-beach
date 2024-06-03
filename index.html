@@ -34,31 +34,64 @@
 
             <!-- reserved mobile view-->
             <section class="reserved-section">
-                <article class="reserved-container">
+                <article class="reserved-container" id="reserved-container">
                     <figure class="reserved-content">
                         <h1>Reservation</h1>
                         <p>welcome, Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quisquam magnam, perferendis nam facilis labore, ullam ea repudiandae natus perspiciatis culpa. Est in eaque temporibus velit voluptatem voluptas ipsam odio.</p>
                         <form action="">
                             <h1>Search Available</h1>
                             <label for="check-in">Check-In:</label>
-                            <input class="datapicker" name="check-in" id="check-in" type="datetime-local" placeholder ="Plan to Check-in">
+                            <input class="datapicker" name="check-in" id="reservedcheck-in" type="datetime-local" placeholder ="Plan to Check-in">
                             <label for="check-out">Check-Out:</label>
-                            <input class="datapicker" name="check-out" id="check-out" type="datetime-local" placeholder ="Plan to Check-out">
+                            <input class="datapicker" name="check-out" id="reservedcheck-out" type="datetime-local" placeholder ="Plan to Check-out">
                             <div class="select-person">
-                                <select name="" id="">
+                                <select name="" id="reserved_selectadult">
                                     <option value="" selected>Adults</option>
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
                                 </select>
-                                <select name="" id="">
+                                <select name="" id="reserved_selectchild">
                                     <option value="" selected>Child</option>
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
                                 </select>
                             </div>
-                            <button type="submit">Search</button>
+                            <button type="button" id="reserved_submit" onclick="window.location.href='#search-result'">Search</button>
+                            <div id="reservedavailable-cottage" class="reservedavailable-cottage" style="display: none;">
+                                <div class="reserved-cottage">
+                                <div id="reservedcottage1" class="cottage-one bunddle" style="display: none;">
+                                        <img src="assets/bunddle1.png" alt="" >   
+                                    <div class="go-button">
+                                        <p>Good for 2 person</p>
+                                    </div>
+                                </div>
+                                <div id="reservedcottage2" class="cottage-two bunddle" style="display: none;">
+                                    <img src="assets/bunddle2.png" alt=""  >   
+                                    <div class="go-button">
+                                        <p>Good for 3 person</p>
+                                    </div>
+                                </div>
+                                <div id="reservedcottage3" class="cottage-three bunddle" style="display: none;">
+                                    <img src="assets/bunddle3.png" alt="" >   
+                                    <div class="go-button">
+                                        <p>Good for 5 person</p>
+                                    </div>
+                                </div>
+                                <div id="reservedcottage4" class="cottage-three bunddle" style="display: none;">
+                                    <img src="assets/bunddle4.png" alt="">   
+                                    <div class="go-button">
+                                        <p>Good for 10 person</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         </form>
                     </figure>
                 </article>
@@ -77,7 +110,6 @@
                             <li><a href="#" id="bookingbtn"><img src="assets/booking.png" alt="">Book</a></li>
                             <li><a href="#jump-price"><img src="assets/price.png" alt="">Price</a></li>
                             <li><a href="#jump-gallery"><img src="assets/gallery.png" alt="">Gallery</a></li>
-                            <li><a href="#serviceContent"><img src="assets/service.png" alt="">Service</a></li>
                             <li><a href="#jump-contact"><img src="assets/contact.png" alt="">Contact</a></li>
                             <li><a href="#jump-about"><img src="assets/about.png" alt="">About</a></li>
                         </ul>
@@ -91,87 +123,107 @@
         <section class="book-section">
             <article class="book-container">
                 <figure class="book-content" id="overlay">
-                        <form action="" id="user-booking" class="user-booking">
+                        <form action="#" id="user-booking" class="user-booking">
                             <div class="book-details">
                             <h1>Sulok Beach <span>Online Booking!</span></h1>
                             <div class="checkin">
                                 <label for="check-in">Check-In:</label>
-                                <input class="datapicker" name="check-in" id="check-in" type="datetime-local" placeholder ="Duration start">
+                                <input class="datapicker" name="check-in" id="formcheck-in" type="datetime-local" placeholder ="Duration start">
                             </div>
                             <div class="checkout">
                                 <label for="check-out">Check-Out:</label>
-                                <input class="datapicker" name="check-out" id="check-out" type="datetime-local" placeholder ="Duration end">
+                                <input class="datapicker" name="check-out" id="formcheck-out" type="datetime-local" placeholder ="Duration end">
                             </div>
                             <div class="select-person">
                                 <div class="adult-container">
                                     <label for="selectadult">Persons</label>
                                     <select name="selectadult" id="selectadult">
                                         <option value="" selected>Adults</option>
-                                        <option value="">1</option>
-                                        <option value="">2</option>
-                                        <option value="">3</option>
-                                        <option value="">4</option>
-                                        <option value="">5</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
                                     </select>
                                 </div>
                                 <div class="child-container">
                                 <select name="selectchild" id="selectchild">
                                     <option value="" selected>Child</option>
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
-                                    <option value="">5</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
                                 </select>
                                 </div>
                             </div>
                             <div class="userbtn">
-                                <button type="submit">Search</button>
+                                <button id="book-submit" type="button">Search</button>
                                 <button type="reset" id="cancelbtn">cancel</button>
                             </div>
                         </div>
-                        <h1>Available Cottage</h1>
-                            <div class="available-cottage">
+                        <h1 id="availheader" style="display: none;">Available Cottage <button id="reload-cottage" type="button"><img src="https://cdn-icons-png.flaticon.com/128/10009/10009226.png" alt=""></button></h1>
+                        <span id="availheader-span" style="margin: -20px; display: none;">Touch the Image to Select</span>
+                        <div id="available-cottage" class="available-cottage" style="display: none;">
                                 <div class="bunddle-container">
-                                <div class="cottage-one bunddle">
+                                <div id="cottage1" class="cottage-one bunddle" style="display: none;">
                                         <img src="assets/bunddle1.png" alt="" >   
                                     <div class="go-button">
                                         <p>Good for 2 person</p>
                                         <div> 
-                                            <a href="" id="go-reserved" class="flex-icon" style="justify-content: center;">SELECT</a>
+                                            <a id="cottage1btn" class="flex-icon" style="justify-content: center;">SELECT</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="cottage-two bunddle">
+                                <div id="cottage2" class="cottage-two bunddle" style="display: none;">
                                     <img src="assets/bunddle2.png" alt=""  >   
                                     <div class="go-button">
-                                        <p>Good for 2 person</p>
+                                        <p>Good for 3 person</p>
                                         <div> 
-                                            <a href="" id="go-reserved" class="flex-icon" style="justify-content: center;">SELECT</a>
+                                            <a id="cottage2btn" type="button" class="flex-icon" style="justify-content: center;">SELECT</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="cottage-three bunddle">
+                                <div id="cottage3" class="cottage-three bunddle" style="display: none;">
                                     <img src="assets/bunddle3.png" alt="" >   
                                     <div class="go-button">
-                                        <p>Good for 2 person</p>
+                                        <p>Good for 5 person</p>
                                         <div> 
-                                            <a href="" id="go-reserved" class="flex-icon" style="justify-content: center;">SELECT</a>
+                                            <a id="cottage3btn" class="flex-icon" style="justify-content: center;">SELECT</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="cottage-three bunddle" >
-                                    <img src="assets/bunddle3.png" alt="">   
+                                <div id="cottage4" class="cottage-three bunddle" style="display: none;">
+                                    <img src="assets/bunddle4.png" alt="">   
                                     <div class="go-button">
-                                        <p>Good for 2 person</p>
+                                        <p>Good for 10 person</p>
                                         <div> 
-                                            <a href="" id="go-reserved" class="flex-icon" style="justify-content: center;">SELECT</a>
+                                            <a id="cottage4btn" class="flex-icon" style="justify-content: center;">SELECT</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         </form>
+                        <form action="" method="POST" class="book-fillup" id="book-fillup">
+                            <div class="book-head">
+                                <div class="head">
+                                    <h4>Please enter your details</h4>
+                                </div>
+                                <div class="closebtn">
+                                    <button type="button" id="form-bookclose"><img src="assets/close.png" alt=""></button>
+                                </div>
+                            </div>
+                            <input type="text" name="name" id="bookform-username" placeholder="Name" required>
+                            <input type="email" name="email" id="bookform-email" placeholder="Email" required>
+                            <input type="number" name="contactnum" id="bookform-contactnum" placeholder="Mobile Number" required>
+                            <input type="text" name="address" id="bookform-address" placeholder="Address" required>
+                            <input type="text" name="gcashref" id="bookform-gcashref" placeholder="Gcash Referrence" required>
+                            <textarea name="message" cols="30" rows="5" id="bookform-message" placeholder="Message"></textarea>
+                            <br />
+                            <button type="button" id="bookform-submit" class="contact-btn">Reserved</button>
+                        </form> 
                 </figure>
             </article>
         </section>
@@ -181,7 +233,7 @@
         <br>
         <!-- price bunddle -->
         <section class="price-section">
-            <article class="price-container">
+            <article class="price-container" id="price-container">
                 <h3 class="info-text">Price</h3>
                 <figure class="price-content">
                     <p><b>Sulok Beach</b> offers alot of goods Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum dolorem modi delectus eaque libero iusto excepturi, nobis, obcaecati odio culpa iure ex, quam quo temporibus corrupti neque labore cupiditate eius!</p>
@@ -246,25 +298,6 @@
         </section>    
         <br> 
         <!-- end here -->
-        <br>
-        <!-- services -->
-        <section class="service-section" id="serviceContent">
-            <article class="service-container">
-                <h4 class="info-text">Services</h4>
-                <figure class="service-content">
-                    <div class="food-service service-box">
-                        <h1>Foods</h1>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni reiciendis aliquid ea sunt possimus cumque, reprehenderit magnam doloremque itaque asperiores ex, vitae, aut ab cupiditate hic dolores. Accusamus, veritatis eveniet!</p>
-                    </div>
-                    <div class="transportation-service service-box">
-                        <h1>Tranportation</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cum repellat excepturi obcaecati, odit ducimus quis amet in quod ab laboriosam eum! Atque consequatur libero sint tenetur aliquid veritatis voluptas.</p>
-                    </div>
-                </figure>
-            </article>
-        </section>
-        <!-- end here -->
-        <br>
         <a id="jump-contact"></a>
         <br>
         <!-- contact -->
@@ -315,7 +348,10 @@
     <footer>
         <p> CopyRight &copy; This Website is Created by Emmanuel S. Ablao</p>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="main.js" ></script>
+    <script type="module" src="database.js"></script>
 </body>
 </html>

@@ -7,6 +7,9 @@ Openbooking.addEventListener('click', function(){
 })
 cancelbtn.addEventListener('click', function(){
     booking.style.display="none";
+    document.getElementById('availheader').style.display = "none";
+    document.getElementById('available-cottage').style.display = "none";
+    document.getElementById('availheader-span').style.display = "none";
 })
 //end mobile-view
 
@@ -263,7 +266,36 @@ window.addEventListener('scroll', function() {
 
 //end Gallery-DesktopView
 
+// other function
+var isAvail;
+var GoodFor;
+function handleCottageClick(cottageId, goodFor) {
+    isAvail = cottageId;
+    GoodFor = goodFor;
+    document.getElementById('book-fillup').style.display = "flex";
+}
 
+cottage1btn.addEventListener('click', function() {
+    handleCottageClick("cottage-1", "2");
+});
+
+cottage2btn.addEventListener('click', function() {
+    handleCottageClick("cottage-2", "3");
+});
+
+cottage3btn.addEventListener('click', function() {
+    handleCottageClick("cottage-3", "5");
+});
+
+cottage4btn.addEventListener('click', function() {
+    handleCottageClick("cottage-4", "10");
+});
+
+
+const close_formbook = document.getElementById('form-bookclose');
+close_formbook.addEventListener('click',function(){
+    document.getElementById('book-fillup').style.display="none";
+})
 
 
 

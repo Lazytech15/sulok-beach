@@ -272,11 +272,12 @@ body{
     font-size: var(--t-s-sm);
     font-weight:var(--t-b-b);
     position: fixed; 
-    top: 50%; 
+    top: 40%; 
     left: 50%; 
     transform: translate(-50%, -50%); 
     width: 80%;
     margin: auto;
+    height: auto;
     padding: 20px;
     border-radius: 10px;
     z-index: 2;
@@ -360,6 +361,7 @@ body{
 }
 .available-cottage{
     align-items: center;
+    justify-content: center;
     text-align: center;
     width: 80%;
     margin: auto;
@@ -367,7 +369,6 @@ body{
 .available-cottage h1{
     font-size: var(--t-s-m);
     font-family: var(--f-f-sh);
-    margin-bottom: 5px;
 }
 .bunddle-container{
     display: flex;
@@ -380,6 +381,64 @@ body{
 .bunddle img{
     width: 300px;
     height: 200px;
+}
+.book-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.book-head .closebtn button{
+    background-color: transparent;
+    border: none;
+}
+.book-head .closebtn img{
+    width: 30px;
+    height: 30px;
+}
+.book-fillup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 30%;
+    z-index: 999999;
+    padding: 20px;
+    background-color: var(--b-c-w);
+    border: 1px solid var(--b-c-b);
+    border-radius: 10px;
+    gap: 10px;
+    display: none;
+}
+.book-fillup input,
+.book-fillup textarea{
+    padding: 10px;
+    border: 1px solid var(--b-c-b);
+    border-radius: 5px;
+}
+.book-fillup button{
+    background-color: var(--b-c-y);
+    font-family: var(--f-f-sh);
+    font-weight: var(--t-b-bb);
+}
+.book-fillup button:hover{
+    background-color: #f8b44e;
+}
+#reload-cottage{
+    background-color: transparent;
+    border: none;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#reload-cottage img{
+    width: 25px;
+    height: 25px;
+    transition: var(--t-d-d3);
+}
+#reload-cottage img:hover {
+    transform: rotate(-390deg);
 }
 
 /* end booking */
@@ -473,6 +532,7 @@ body{
     text-decoration: none;
     font-weight: var(--t-b-bb);
     font-family: var(--f-f-sh);
+    cursor: pointer;
 }
 
 .bunddle .go-button a:hover {
@@ -550,41 +610,11 @@ img[src="assets/close.png"]{
 img[src="assets/close.png"]:hover{
     transform: scale(1.2);
 }
-.service-section{
-    margin: auto;
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+
 .gallery-section #showMoreButton{
     display: none;
 }
 /* end-gallery */
-
-/* service-section */
-.service-container h4{
-    margin-bottom: 20px;
-}
-.service-content{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 100px;
-    text-align: center;
-}
-.service-content .service-box{
-    border: 1px solid black;
-    width: 300px;
-    height: auto;
-    border-radius: 10px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-/* end-services */
 
 /* contact-section */
 .contact-section{
@@ -733,20 +763,24 @@ body.dark-mode .user-booking h1{
 body.dark-mode .user-booking span{
     color: var(--t-c-s9);
 }
-body.dark-mode .user-booking{
+body.dark-mode .user-booking,
+body.dark-mode .book-fillup{
     background-color: var(--b-c-ddg);
 }
 body.dark-mode .user-booking{
     color: var(--t-c-s6);
 }
 body.dark-mode .user-booking input,
-body.dark-mode .user-booking select{
+body.dark-mode .user-booking select,
+body.dark-mode .book-fillup input,
+body.dark-mode .book-fillup textarea{
     border-radius: 5px;
     color: var(--t-c-s6);
     border: 1px solid var(--b-c-sw);
     background-color: var(--b-c-dg);
 }
-body.dark-mode .user-booking button{
+body.dark-mode .user-booking button,
+body.dark-mode .book-fillup #bookform-submit{
     background-color: var(--b-c-p);
 }
 
@@ -768,12 +802,6 @@ body.dark-mode .info-text{
 }
 body.dark-mode .Image-expanded{
     background-color: var(--b-c-ddg);
-}
-body.dark-mode .service-box{
-    border-color: var(--b-c-sw);
-}
-body.dark-mode .service-content .service-box h1{
-    color: var(--t-c-s9);
 }
 body.dark-mode .contact-content h1{
     color: var(--t-c-s9);
@@ -910,6 +938,22 @@ body.dark-mode #form-message textarea{
         width: 100%;
         padding: 10px;
     }
+    .reservedavailable-cottage{
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: initial;
+    }
+    .reserved-cottage{
+        display: flex;
+        flex-direction: row;
+        margin-top: 10px;
+        gap: 10px; 
+    }
+    .reserved-container{
+        width: 100%;
+    }
     .image-nav-bar-content{
         position: fixed;
         bottom: 0;
@@ -979,6 +1023,7 @@ body.dark-mode #form-message textarea{
         display: flex;
         flex-direction: row;
         width: 100%;
+        justify-content: initial;
     }
     .available-cottage::-webkit-scrollbar-track{
         border: 1px solid var(--b-c-dg);
@@ -1001,6 +1046,9 @@ body.dark-mode #form-message textarea{
     }
     .bunddle-container img{
         width: 250px;
+    }
+    .book-fillup{
+        width: 90%;
     }
     /* end */
 
@@ -1099,23 +1147,7 @@ body.dark-mode #form-message textarea{
         font-weight: var(--t-b-sl);
     }
     /* end here */
-
-    .service-section{
-        margin-top: 20px;
-    }
-    .service-content{
-        flex-direction: column;
-        gap: 60px;
-    }
-    .service-box h1{
-        font-weight: var(--t-b-bb);
-        font-size: var(--t-s-m);
-        font-family: var(--f-f-h2);
-    }
-    .service-box p{
-        font-family: var(--f-f-p);
-        font-size: var(--t-s-s);
-    }
+    
     .contact-section{
         margin-top: 0;
     }
@@ -1177,5 +1209,4 @@ body.dark-mode #form-message textarea{
     body.dark-mode .available-cottage::-webkit-scrollbar-thumb{
         background-color: var(--b-c-p);
     }
-    
 }
