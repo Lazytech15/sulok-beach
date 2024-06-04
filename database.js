@@ -37,7 +37,10 @@ const firebaseConfig = {
         cottageGoodFor.push({ ...cottageData,cottageID});
   })
     container = Number.parseFloat(adult) + Number.parseFloat(child);
-        // Hide all cottages initially
+    const backendResponseTimer = setTimeout(() => {
+        swal("System Notice!", "Backend response is slow. Please check your internet connection.", "info");
+        clearTimeout(backendResponseTimer);
+    }, 10000);
     document.getElementById('availheader').style.display = "none";
     document.getElementById('availheader-span').style.display = "none";
     document.getElementById('available-cottage').style.display = "none";
@@ -51,13 +54,12 @@ const firebaseConfig = {
         
 
         if (container <= data.GoodFor && data.isAvail === true) {
-            // Common styling for all cottages
             document.getElementById('availheader').style.display = "flex";
             document.getElementById('available-cottage').style.display = "flex";
             document.getElementById('availheader-span').style.display = "flex";
             document.getElementById('user-booking').style.top = "50%";
+            clearTimeout(backendResponseTimer);
 
-            // Determine which cottage to display based on data.cottageID
             switch (data.cottageID) {
                 case "cottage-1":
                     document.getElementById('cottage1').style.display = "flex";
@@ -72,14 +74,14 @@ const firebaseConfig = {
                     document.getElementById('cottage4').style.display = "flex";
                     break;
                 default:
-                    // Handle the case when no matching cottage is available
                     break;
             }
         } else {
-            count++; // Increment count
+            count++;
         }
         if (count == cottageGoodFor.length) {
-            swal("info", "No available Cottage", "info");
+            clearTimeout(backendResponseTimer);
+            swal("System Notice!", "No available Cottage", "info");
         }
 
         
@@ -95,73 +97,76 @@ const firebaseConfig = {
     let container;
     let cottageData = [];
     client.collection("avail-cottage").onSnapshot((querySnapshot) => {
-      querySnapshot.forEach((data) => {
-        cottageData = data.data();
-        cottageID = data.id;
-        cottageGoodFor.push({ ...cottageData,cottageID});
-  })
-    container = Number.parseFloat(adult) + Number.parseFloat(child);
-    console.log(container);
-    document.getElementById('reservedavailable-cottage').style.display = "none";
-    document.getElementById('reservedcottage1').style.display = "none";
-    document.getElementById('reservedcottage2').style.display = "none";
-    document.getElementById('reservedcottage3').style.display = "none";
-    document.getElementById('reservedcottage4').style.display = "none";
-    let count = 0;
-
-    cottageGoodFor.forEach((data) => {
-        
-
-        if (container <= data.GoodFor && data.isAvail === true) {
-            document.getElementById('reservedavailable-cottage').style.display = "flex";
-            document.getElementById('reserved-container').style.marginTop = "200px";
-            document.getElementById('price-container').style.marginTop = "180px";
-
-
-            // Determine which cottage to display based on data.cottageID
-            switch (data.cottageID) {
-                case "cottage-1":
-                    document.getElementById('reservedcottage1').style.display = "flex";
-                    window.scrollBy(0, 220);
-                    break;
-                case "cottage-2":
-                    document.getElementById('reservedcottage2').style.display = "flex";
-                    window.scrollBy(0, 220);
-                    break;
-                case "cottage-3":
-                    document.getElementById('reservedcottage3').style.display = "flex";
-                    window.scrollBy(0, 220);
-                    break;
-                case "cottage-4":
-                    document.getElementById('reservedcottage4').style.display = "flex";
-                    window.scrollBy(0, 220);
-                    break;
-                default:
-                    // Handle the case when no matching cottage is available
-                    break;
+        querySnapshot.forEach((data) => {
+            cottageData = data.data();
+            cottageID = data.id;
+            cottageGoodFor.push({ ...cottageData, cottageID });
+        });
+    
+        container = Number.parseFloat(adult) + Number.parseFloat(child);
+        const backendResponseTimer = setTimeout(() => {
+            swal("System Notice!", "Backend response is slow. Please check your internet connection.", "info");
+            clearTimeout(backendResponseTimer);
+        }, 10000);
+    
+        document.getElementById('reservedavailable-cottage').style.display = "none";
+        document.getElementById('reservedcottage1').style.display = "none";
+        document.getElementById('reservedcottage2').style.display = "none";
+        document.getElementById('reservedcottage3').style.display = "none";
+        document.getElementById('reservedcottage4').style.display = "none";
+        let count = 0;
+    
+        cottageGoodFor.forEach((data) => {
+            if (container <= data.GoodFor && data.isAvail === true) {
+                document.getElementById('reservedavailable-cottage').style.display = "flex";
+                document.getElementById('reserved-container').style.marginTop = "200px";
+                document.getElementById('price-container').style.marginTop = "180px";
+                document.querySelector('.gallery-section').style.marginTop = "300px";
+                clearTimeout(backendResponseTimer);
+    
+                // Determine which cottage to display based on data.cottageID
+                switch (data.cottageID) {
+                    case "cottage-1":
+                        document.getElementById('reservedcottage1').style.display = "flex";
+                        window.scrollBy(0, 220);
+                        break;
+                    case "cottage-2":
+                        document.getElementById('reservedcottage2').style.display = "flex";
+                        window.scrollBy(0, 220);
+                        break;
+                    case "cottage-3":
+                        document.getElementById('reservedcottage3').style.display = "flex";
+                        window.scrollBy(0, 220);
+                        break;
+                    case "cottage-4":
+                        document.getElementById('reservedcottage4').style.display = "flex";
+                        window.scrollBy(0, 220);
+                        break;
+                    default:
+                        // Handle the case when no matching cottage is available
+                        break;
+                }
+            } else {
+                count++; // Increment count
             }
-        } else {
-            count++; // Increment count
-        }
-        if (count == cottageGoodFor.length) {
-            swal("info", "No available Cottage", "info");
-        }
-
-        
+            if (count === cottageGoodFor.length) {
+                clearTimeout(backendResponseTimer);
+                swal("System Notice!", "No available Cottage", "info");
+            }
+        });
     });
-
-  })
+    
   }
   reserved_submit.addEventListener('click',function(){
     if(document.getElementById('reservedcheck-in').value ==="" && document.getElementById('reservedcheck-out').value===""){
-        swal("Error!", "Please select check-in aswell the check-out, Thank you!", "error")
+        swal("System Notice!", "Please select check-in aswell the check-out, Thank you!", "info")
     }else{
         checkreserved();
     }
 })
   BookSubmit.addEventListener('click',function(){
     if(document.getElementById('formcheck-in').value ==="" && document.getElementById('formcheck-out').value===""){
-        swal("Error!", "Please select check-in aswell the check-out, Thank you!", "error")
+        swal("System Notice!", "Please select check-in aswell the check-out, Thank you!", "info")
     }else{
         checkbooked();
     }

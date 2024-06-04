@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const showMoreButton = document.getElementById('showMoreButton');
     const hiddenImages = document.querySelectorAll('.gallery-content img:nth-child(n+4)');
     const hiddenText = document.querySelectorAll('.gallery-content p:nth-child(n+5)');
-    const serviceContent = document.getElementById('serviceContent');
+    const serviceContent = document.getElementById('contact-section');
     const jumpGallery = document.getElementById('jump-gallery');
     const gallerySection = document.querySelector('.gallery-section');
     let isHidden = true;
@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
     //end gallery mobile-view
-    
+
     // price adjust the gallery section when it's expanded
     const priceContentOffersImgs = document.querySelectorAll('.price-content .offers img');
     priceContentOffersImgs.forEach(img => {

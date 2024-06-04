@@ -943,7 +943,7 @@ body.dark-mode #form-message textarea{
         display: flex;
         flex-direction: row;
         width: 100%;
-        justify-content: initial;
+        justify-content: inherit;
     }
     .reserved-cottage{
         display: flex;
