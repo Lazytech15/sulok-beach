@@ -1000,6 +1000,7 @@ body.dark-mode #form-message textarea{
     }
     .select-person{
         width: 100%;
+        margin-right:0px;
     }
     .adult-container,
     .child-container{
