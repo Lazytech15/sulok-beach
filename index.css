@@ -378,6 +378,9 @@ body{
     align-items: center;
     /* display: none; */
 }
+.bunddle img{
+    width: 250px;
+}
 
 .book-head{
     display: flex;
@@ -432,9 +435,9 @@ body{
 #reload-cottage img{
     width: 25px;
     height: 25px;
-    transition: var(--t-d-d3);
+    transition: var(--t-d-d4);
 }
-#reload-cottage img:hover {
+#reload-cottage img:active {
     transform: rotate(-390deg);
 }
 
@@ -1039,6 +1042,7 @@ body.dark-mode #form-message textarea{
     }
     .available-cottage::-webkit-scrollbar-thumb{
         background-color: var(--b-c-y);
+        
     }
     .user-booking h1{
         font-size: var(--t-s-m);
@@ -1050,7 +1054,8 @@ body.dark-mode #form-message textarea{
         flex-wrap: nowrap;
     }
     .bunddle-container img{
-        width: 250px;
+        width: 240px;
+        height: 150px;
     }
     .book-fillup{
         width: 90%;

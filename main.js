@@ -92,6 +92,37 @@ if (!isViewportLessThan700px()) {
 }
 //end sticky nav-bar
 
+//reservation
+function isReservationVisible(){
+    function isReservationCottage() {
+        const ReservationSection = document.querySelector('.reserved-section');
+        
+        const ReservationReact = ReservationSection.getBoundingClientRect();
+        return ReservationReact.top < window.innerHeight && ReservationReact.bottom > 0;
+    }
+    window.addEventListener('scroll', function() {
+        if (window.innerWidth <= 700) {
+            if (isReservationCottage()) {
+                // do nothing
+            } else {
+                document.getElementById('reservedavailable-cottage').style.display = "none";
+                document.getElementById('reserved-container').style.marginTop="0";
+                document.getElementById('price-container').style.marginTop="0";
+                document.getElementById('gallery-section').style.marginTop="35px";
+                document.getElementById('reserved-message').style.display = "none";
+                document.getElementById('reserved-form').reset();
+            }
+        }
+    });
+}
+window.addEventListener('scroll', function() {
+    if(!(document.getElementById('reservedavailable-cottage').style.display == "none")){
+        isReservationVisible();
+    }
+})
+
+//end reservation
+
 
 // gallery mobile-view adjust the margin top of service when clicking the showMore
 // and ensure that this will work only in screen size of 700 
@@ -185,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     //end gallery mobile-view
 
-    // price adjust the gallery section when it's expanded
+    // price adjust the gallery section when it's expanded & expand also the gallery and price when reserved is search
     const priceContentOffersImgs = document.querySelectorAll('.price-content .offers img');
     const reservedviewon = document.getElementById('reservedavailable-cottage');
     priceContentOffersImgs.forEach(img => {

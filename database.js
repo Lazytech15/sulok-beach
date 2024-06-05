@@ -108,7 +108,6 @@ const firebaseConfig = {
             swal("System Notice!", "Backend response is slow. Please check your internet connection.", "info");
             clearTimeout(backendResponseTimer);
         }, 10000);
-    
         document.getElementById('reservedavailable-cottage').style.display = "none";
         document.getElementById('reservedcottage1').style.display = "none";
         document.getElementById('reservedcottage2').style.display = "none";
