@@ -378,10 +378,7 @@ body{
     align-items: center;
     /* display: none; */
 }
-.bunddle img{
-    width: 300px;
-    height: 200px;
-}
+
 .book-head{
     display: flex;
     justify-content: space-between;
@@ -954,6 +951,14 @@ body.dark-mode #form-message textarea{
     .reserved-container{
         width: 100%;
     }
+    .reserved-cottage img{
+        width: 300px;
+    }
+    #reserved-message{
+        margin-top: 10px;
+        text-align: center;
+        justify-content: center;
+    }
     .image-nav-bar-content{
         position: fixed;
         bottom: 0;
@@ -1088,7 +1093,7 @@ body.dark-mode #form-message textarea{
         
     }
     .price-content .offers img{
-        width: 100%;
+        width: 300px;
         height: 190px;
     }
     .price-content .offers img:hover{

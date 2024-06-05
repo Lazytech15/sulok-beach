@@ -94,7 +94,7 @@ const firebaseConfig = {
     let cottageID;
     let adult = document.getElementById('reserved_selectadult').value
     let child = document.getElementById('reserved_selectchild').value
-    let container;
+    let container=0;
     let cottageData = [];
     client.collection("avail-cottage").onSnapshot((querySnapshot) => {
         querySnapshot.forEach((data) => {
@@ -115,13 +115,16 @@ const firebaseConfig = {
         document.getElementById('reservedcottage3').style.display = "none";
         document.getElementById('reservedcottage4').style.display = "none";
         let count = 0;
-    
+        document.getElementById('reservedavailable-cottage').style.justifyContent="initial";
+
         cottageGoodFor.forEach((data) => {
             if (container <= data.GoodFor && data.isAvail === true) {
+                document.getElementById('reserved-message').style.display="flex";
                 document.getElementById('reservedavailable-cottage').style.display = "flex";
-                document.getElementById('reserved-container').style.marginTop = "200px";
-                document.getElementById('price-container').style.marginTop = "180px";
-                document.querySelector('.gallery-section').style.marginTop = "300px";
+                document.getElementById('reserved-container').style.marginTop = "260px";
+                document.getElementById('price-container').style.marginTop = "220px";
+                document.getElementById('gallery-section').style.marginTop = "340px";
+    
                 clearTimeout(backendResponseTimer);
     
                 // Determine which cottage to display based on data.cottageID
@@ -143,11 +146,15 @@ const firebaseConfig = {
                         window.scrollBy(0, 220);
                         break;
                     default:
-                        // Handle the case when no matching cottage is available
                         break;
                 }
             } else {
-                count++; // Increment count
+                count++;
+                if(count==3){
+                    document.getElementById('reservedavailable-cottage').style.justifyContent="center";
+                    // count=0;
+                    console.log(count);
+                }
             }
             if (count === cottageGoodFor.length) {
                 clearTimeout(backendResponseTimer);

@@ -187,23 +187,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // price adjust the gallery section when it's expanded
     const priceContentOffersImgs = document.querySelectorAll('.price-content .offers img');
+    const reservedviewon = document.getElementById('reservedavailable-cottage');
     priceContentOffersImgs.forEach(img => {
         img.addEventListener('mouseenter', function() {
-            if (isViewportLessThanOrEqualTo700px()) {
+            if(reservedviewon.style.display=="flex" && isViewportLessThanOrEqualTo700px()){
+                img.style.height = '400px';
+                gallerySection.style.marginTop = '490px';
+            }else{
                 img.style.height = '400px';
                 gallerySection.style.marginTop = '300px';
             }
         });
 
         img.addEventListener('mouseleave', function() {
-            img.style.height = ''; 
-            gallerySection.style.marginTop = '40px';
-            if (isHidden && isViewportLessThanOrEqualTo700px()) {
+            if(reservedviewon.style.display=="flex" && isHidden && isViewportLessThanOrEqualTo700px()){
+                img.style.height = ''; 
+                gallerySection.style.marginTop = '300px'; 
                 let galleryHeight = gallerySection.scrollHeight;
                 galleryHeight = galleryHeight > 600 ? 600 : galleryHeight;
                 serviceContent.style.marginTop = `${galleryHeight}px`;
-            } else {
-                gallerySection.style.marginTop = '0';
+            }else{
+                img.style.height = ''; 
+                gallerySection.style.marginTop = '40px';
             }
         });
     });
