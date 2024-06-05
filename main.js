@@ -116,7 +116,7 @@ function isReservationVisible(){
     });
 }
 window.addEventListener('scroll', function() {
-    if(!(document.getElementById('reservedavailable-cottage').style.display == "none")){
+    if(!(document.getElementById('reservedavailable-cottage').style.display === "none")){
         isReservationVisible();
     }
 })
