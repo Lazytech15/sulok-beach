@@ -93,33 +93,37 @@ if (!isViewportLessThan700px()) {
 //end sticky nav-bar
 
 //reservation
-function isReservationVisible(){
-    function isReservationCottage() {
-        const ReservationSection = document.querySelector('.reserved-section');
-        
-        const ReservationReact = ReservationSection.getBoundingClientRect();
-        return ReservationReact.top < window.innerHeight && ReservationReact.bottom > 0;
-    }
-    window.addEventListener('scroll', function() {
+
+function isReservationVisible() {
+    const reservedMessage = document.getElementById('reserved-message');
+    const isMessageVisible = window.getComputedStyle(reservedMessage).display !== 'none';
+
+    if (isMessageVisible) {
+        function isReservationCottage() {
+            const ReservationSection = document.querySelector('.reserved-section');
+            const ReservationRect = ReservationSection.getBoundingClientRect();
+            return ReservationRect.top < window.innerHeight && ReservationRect.bottom > 0;
+        }
+    
         if (window.innerWidth <= 700) {
             if (isReservationCottage()) {
                 // do nothing
             } else {
                 document.getElementById('reservedavailable-cottage').style.display = "none";
-                document.getElementById('reserved-container').style.marginTop="0";
-                document.getElementById('price-container').style.marginTop="0";
-                document.getElementById('gallery-section').style.marginTop="35px";
+                document.getElementById('reserved-container').style.marginTop = "0";
+                document.getElementById('price-container').style.marginTop = "0";
+                document.getElementById('gallery-section').style.marginTop = "35px";
                 document.getElementById('reserved-message').style.display = "none";
                 document.getElementById('reserved-form').reset();
             }
         }
-    });
-}
-window.addEventListener('scroll', function() {
-    if(!(document.getElementById('reservedavailable-cottage').style.display === "none")){
-        isReservationVisible();
     }
-})
+}
+
+window.addEventListener('scroll', isReservationVisible);
+
+
+
 
 //end reservation
 
